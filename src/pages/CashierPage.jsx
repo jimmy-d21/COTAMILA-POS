@@ -45,7 +45,8 @@ export function CashierPage() {
     return menuItems.filter((item) => {
       const matchesCategory =
         selectedCategory === "All" || item.category === selectedCategory;
-      const matchesSearch = !searchQuery ||
+      const matchesSearch =
+        !searchQuery ||
         item.name.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
@@ -129,12 +130,14 @@ export function CashierPage() {
   };
 
   return (
-    <div className="h-full flex">
+    <div className="h-full flex min-h-0">
       {/* ── Left: Product Grid ───────────────────────────────────────────── */}
-      <div className="flex-1 flex flex-col bg-background">
-        <div className="p-6 border-b border-border bg-card space-y-4">
+      <div className="flex-1 flex flex-col bg-background min-h-0">
+        <div className="p-6 border-b border-border bg-card space-y-4 shrink-0">
           <div className="flex items-center justify-between gap-4">
-            <h2 className="text-2xl font-semibold font-display">Point of Sale</h2>
+            <h2 className="text-2xl font-semibold font-display">
+              Point of Sale
+            </h2>
             <div className="relative w-64">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input
@@ -150,7 +153,7 @@ export function CashierPage() {
             onSelect={setSelectedCategory}
           />
         </div>
-        <ScrollArea className="flex-1 p-6">
+        <ScrollArea className="flex-1 min-h-0 p-6">
           {filteredItems.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-muted-foreground py-24">
               <p className="text-sm">No items match your search.</p>

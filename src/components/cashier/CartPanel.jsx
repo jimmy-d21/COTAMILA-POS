@@ -1,3 +1,4 @@
+import { useLocation } from "react-router";
 import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
@@ -17,9 +18,9 @@ export function CartPanel({
   const cartTotal = cart.reduce((sum, item) => sum + item.subtotal, 0);
 
   return (
-    <div className="w-96 bg-card border-l border-border flex flex-col">
+    <div className="w-96 h-full bg-card border-l border-border flex flex-col shrink-0">
       {/* Header */}
-      <div className="p-6 border-b border-border">
+      <div className="p-6 border-b border-border shrink-0">
         <div className="flex items-center justify-between mb-1">
           <h3 className="text-xl font-semibold">Order #{orderNumber}</h3>
           {cart.length > 0 && (
@@ -52,7 +53,7 @@ export function CartPanel({
       </div>
 
       {/* Items */}
-      <ScrollArea className="flex-1 p-6">
+      <ScrollArea className="flex-1 min-h-0 p-6">
         {cart.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-muted-foreground py-16">
             <Coffee className="w-16 h-16 mb-4 opacity-20" />
@@ -73,7 +74,7 @@ export function CartPanel({
       </ScrollArea>
 
       {/* Footer */}
-      <div className="p-6 border-t border-border bg-muted/50">
+      <div className="p-6 border-t border-border bg-muted/50 shrink-0">
         <div className="space-y-2 mb-4">
           <div className="flex justify-between text-sm">
             <span className="text-muted-foreground">Subtotal</span>
@@ -82,9 +83,7 @@ export function CartPanel({
           <Separator />
           <div className="flex justify-between">
             <span className="font-semibold">Total</span>
-            <span className="text-2xl font-bold">
-              ₱{cartTotal.toFixed(2)}
-            </span>
+            <span className="text-2xl font-bold">₱{cartTotal.toFixed(2)}</span>
           </div>
         </div>
         <Button

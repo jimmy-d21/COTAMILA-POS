@@ -15,6 +15,7 @@ import { useAuth } from "../../hooks/useAuth.js";
 import { useCart } from "../../hooks/useCart.js";
 import { useTheme } from "../../hooks/useTheme.js";
 import { Button } from "../ui/button";
+import { CartPanel } from "../cashier/CartPanel.jsx";
 
 export function RootLayout() {
   const { currentUser, isAuthenticated, logout } = useAuth();
@@ -122,7 +123,7 @@ export function RootLayout() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-auto">
+      <main className="flex-1 overflow-hidden">
         <Outlet />
       </main>
     </div>
