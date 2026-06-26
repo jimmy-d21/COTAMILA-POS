@@ -1,11 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
 const COLORS = [
   "var(--chart-1)",

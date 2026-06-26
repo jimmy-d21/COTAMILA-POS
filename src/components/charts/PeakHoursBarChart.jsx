@@ -22,7 +22,11 @@ export function PeakHoursBarChart({ data }) {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="hour" />
             <YAxis yAxisId="left" orientation="left" stroke="var(--chart-2)" />
-            <YAxis yAxisId="right" orientation="right" stroke="var(--chart-1)" />
+            <YAxis
+              yAxisId="right"
+              orientation="right"
+              stroke="var(--chart-1)"
+            />
             <Tooltip />
             <Legend />
             <Bar
